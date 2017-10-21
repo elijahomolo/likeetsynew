@@ -26,7 +26,7 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
  #  setting user ID of current user 
-    @listing.user_id = current_user.id
+    #@listing.user_id = current_user.id
 
     respond_to do |format|
       if @listing.save
