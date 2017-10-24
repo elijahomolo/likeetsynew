@@ -17,4 +17,6 @@ end
   validates_attachment_presence :image
 
   belongs_to :user, optional: true
+  has_many :orders
+
 end
