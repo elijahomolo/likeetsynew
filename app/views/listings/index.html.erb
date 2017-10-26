@@ -1,6 +1,6 @@
 <div class="jumbotron">
-<h1> STUFF! </h1>
-<h2> sell stuff here!</h2>
+  <h1>STUFF</h1>
+  <h2>BUYS STUFF HERE(..also, UI isn't my thing)</h2>
 </div>
 
 <div class="center">
@@ -12,16 +12,16 @@
           <div class="caption">
             <h3><%= listing.name %></h3>
             <p><%= number_to_currency(listing.price) %></p>
-            <p><%= "Sold by #{listing.user.name if listing.user}" %></p>
+            <p><%= "Sold by #{listing.user.name}" %></p>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-</div>    
+</div>
 
 <br>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
+  <%= link_to "New Listing", new_listing_path, class: "btn btn-primary", data: { no_turbolink: true } %>
 <% end %>
