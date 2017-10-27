@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://code.stripe.com'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -39,6 +40,7 @@ gem 'fog'
 gem "mini_magick"
 gem "figaro"
 gem 'devise'
+gem 'stripe', :source => 'https://code.stripe.com/' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
