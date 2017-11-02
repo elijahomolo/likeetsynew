@@ -1,4 +1,3 @@
-
 <%= form_for(@listing, :html => { :multipart => true }) do |f| %>
   <% if @listing.errors.any? %>
     <div id="error_explanation" class="alert alert-danger alert-dismissable">
@@ -13,13 +12,8 @@
     </div>
   <% end %>
 
-    <div id="stripe_error" class="alert alert-danger" style="display:none">
+  <div id="stripe_error" class="alert alert-danger" style="display:none">
     <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
   </div>
 
   <div class="form-group">
@@ -39,22 +33,23 @@
     <%= f.file_field :image, class: "form-control" %>
   </div>
 
-<% if current_user.recipient.blank? %>
-<br>
-  <h1>Bank Account Information</h1>
+  <% if current_user.recipient.blank? %>
+    <br>
+    <h1>Bank Account Information</h1>
 
-  <div class="form-group">
-    <%= label_tag :country %>
-    <%= text_field_tag :country, nil, { :name => nil, :'data-stripe' => "country", class: "form-control" } %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :routing_number %>
-    <%= text_field_tag :routing_number, nil, { :name => nil, :'data-stripe' => "routingNumber", class: "form-control" } %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :account_number %>
-    <%= text_field_tag :account_number, nil, { :name => nil, :'data-stripe' => "accountNumber", class: "form-control" } %>
-  </div>
+    <div class="form-group">
+      <%= label_tag :country %>
+      <%= text_field_tag :country, nil, { :name => nil, :'data-stripe' => "country", class: "form-control" } %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :routing_number %>
+      <%= text_field_tag :routing_number, nil, { :name => nil, :'data-stripe' => "routingNumber", class: "form-control" } %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :account_number %>
+      <%= text_field_tag :account_number, nil, { :name => nil, :'data-stripe' => "accountNumber", class: "form-control" } %>
+    </div>
+  <% end %>
 
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
