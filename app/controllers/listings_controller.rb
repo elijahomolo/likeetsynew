@@ -39,7 +39,7 @@ class ListingsController < ApplicationController
 
     recipient = Stripe::Account.create(
       :name => current_user.name,
-      :type => "individual",
+      :type => "standar",
       :bank_account => token
       )
 
