@@ -31,9 +31,12 @@ class OrdersController < ApplicationController
     token = params[:stripeToken]
 
     begin
+      customer = Stripe::Customer.create(source: params[:stripeToken])
       charge = Stripe::Charge.create(
         :amount => (@listing.price * 100).floor,
         :currency => "usd",
+        #:source => params[:stripeToken],
+        :customer => customer.id,
         :card => token
         )
       flash[:notice] = "Thanks for ordering!"
