@@ -35,12 +35,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "paperclip", "~> 5.0.0"
-gem 'carrierwave'
+gem 'carrierwave-aws'
 gem 'fog'
 gem "mini_magick"
 gem "figaro"
 gem 'devise'
-gem 'stripe', :source => 'https://code.stripe.com/' 
+gem 'stripe', :source => 'https://code.stripe.com/'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
